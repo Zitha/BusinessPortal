@@ -1,0 +1,32 @@
+﻿<div class="parallax filter-gradient blue" data-color="blue" style="height:150px">
+    <div class="parallax-background">
+        <img class="parallax-background-image" src="assets/img/template/bg3.jpg">
+    </div>
+</div>
+
+<div class="section section-features">
+    <div class="container">
+        <div class="col-md-4" ng-repeat="technician in technicians">
+            <div class="card">
+                <div class="card-header card-chart" data-background-color="orange">
+                    <img src="{{technician.imageSrc}}" alt="Logo"
+                         style="height:70px;width:70px">
+                </div>
+                <div class="card-content">
+                    <h4 class="title">{{technician.name}} {{technician.surname}}</h4>
+                    <p class="category"> {{technician.type}}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="stats">
+                        Rating: <span style="color:darkgoldenrod" ng-repeat="rate in  [1, 2, 3, 4]"><i class="fa fa-star"></i></span>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn btn-default btn-sm">Request</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+   

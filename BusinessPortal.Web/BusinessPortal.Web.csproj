@@ -20,8 +20,42 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\**" />
+    <Compile Remove="Controllers\**" />
+    <Compile Remove="Pages\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\**" />
+    <Content Remove="Controllers\**" />
+    <Content Remove="Pages\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ClientApp\**" />
+    <EmbeddedResource Remove="Controllers\**" />
+    <EmbeddedResource Remove="Pages\**" />
+    <None Remove="ClientApp\**" />
+    <None Remove="Controllers\**" />
+    <None Remove="Pages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\assets\css\.DS_Store" />
+    <None Include="wwwroot\assets\fonts\.DS_Store" />
+    <None Include="wwwroot\assets\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\assets\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\assets\fonts\Pe-icon-7-stroke.svg" />
+    <None Include="wwwroot\assets\img\.DS_Store" />
+    <None Include="wwwroot\assets\img\faces\.DS_Store" />
+    <None Include="wwwroot\assets\img\logos\.DS_Store" />
+    <None Include="wwwroot\assets\img\showcases\.DS_Store" />
+    <None Include="wwwroot\assets\img\showcases\showcase-1\.DS_Store" />
+    <None Include="wwwroot\assets\img\showcases\showcase-1\examples\.DS_Store" />
+    <None Include="wwwroot\assets\img\showcases\showcase-2\.DS_Store" />
+    <None Include="wwwroot\assets\img\showcases\showcase-2\examples\.DS_Store" />
+    <None Include="wwwroot\assets\img\template\.DS_Store" />
+    <None Include="wwwroot\assets\js\ie\html5shiv.js" />
+    <None Include="wwwroot\assets\js\ie\respond.min.js" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

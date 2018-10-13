@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en" ng-app="TheApp">
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Awesome Landing Page by Creative Tim</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/landing-page.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+</head>
+<body class="landing-page landing-page1">
+    <nav class="navbar navbar-transparent navbar-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button id="menu-toggle" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar1"></span>
+                    <span class="icon-bar bar2"></span>
+                    <span class="icon-bar bar3"></span>
+                </button>
+                <a href="http://www.creative-tim.com">
+                    <div class="logo-container">
+                        <div class="logo">
+                            <img src="assets/img/new_logo.png" alt="Creative Tim Logo">
+                        </div>
+                        <div class="brand">
+                            Corner Job
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="example">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook-square"></i>
+                            086 024 7500
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-facebook-square"></i>
+                            Help
+                        </a>
+                    </li>
+                    <li>
+                        <a href="" ng-click="navigateTo('/listing')">
+                            <i class="fa fa-twitter"></i>
+                            Listing
+                            {{role}}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="wrapper">
+        <ng-view></ng-view>
+    </div>
+    <!--Libraries-->
+    <script src="assets/js/angular-min.js"></script>
+    <script src="assets/js/angular.js"></script>
+    <script src="assets/js/angular-route.js"></script>
+    <script src="assets/js/ngstorage.min.js"></script>
+
+    <!--Bootstrap-->
+    <!--App Config-->
+    <script src="app/app.js"></script>
+    <script src="app/config.route.js"></script>
+
+    <!--Controller-->
+    <script src="IndexController.js"></script>
+    <script src="app/home/homeController.js"></script>
+    <script src="app/listing/listingController.js"></script>
+</body>
+
+</html>
