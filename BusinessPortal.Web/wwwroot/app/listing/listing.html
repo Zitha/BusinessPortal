@@ -6,27 +6,37 @@
 
 <div class="section section-features">
     <div class="container">
-        <div class="col-md-4" ng-repeat="technician in technicians">
-            <div class="card">
-                <div class="card-header card-chart" data-background-color="orange">
-                    <img src="{{technician.imageSrc}}" alt="Logo"
-                         style="height:70px;width:70px">
-                </div>
-                <div class="card-content">
-                    <h4 class="title">{{technician.name}} {{technician.surname}}</h4>
-                    <p class="category"> {{technician.type}}</p>
-                </div>
-                <div class="card-footer">
-                    <div class="stats">
-                        Rating: <span style="color:darkgoldenrod" ng-repeat="rate in  [1, 2, 3, 4]"><i class="fa fa-star"></i></span>
-                    </div>
-                </div>
-                <div>
-                    <button class="btn btn-default btn-sm">Request</button>
+        <div class="row">
+            <select name="singleSelect" ng-model="data.singleSelect" ng-change="categoryChange(this.data)" class="form-control" style="width:50%">
+                <option value="">---Please select---</option>
+                <option value="Plumber">Plumber</option>
+                <option value="Painter">Painter</option>
+                <option value="Electrician">Electrician</option>
+                <option value="Tiler">Tiler</option>
+                <option value="Welder">Welder</option>
+            </select>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4" ng-repeat="technician in technicians">
+                <div class="card">
+                    <a href="" ng-click="navigateTo('/profile',technician)" ng-model="selectedTechnician">
+                        <div class="card-header card-chart" data-background-color="orange">
+                            <img src="{{technician.imageSrc}}" alt="Logo"
+                                 style="height:70px;width:70px">
+                        </div>
+                        <div class="card-content">
+                            <h4 class="title">{{technician.name}} {{technician.surname}}</h4>
+                            <p class="category"> {{technician.type}}</p>
+                        </div>
+                        <div class="card-footer">
+                            <div class="stats">
+                                Rating: <span style="color:darkgoldenrod" ng-repeat="rate in  [1, 2, 3, 4]"><i class="fa fa-star"></i></span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-  
-   

@@ -9,6 +9,9 @@
         }).when('/listing', {
             controller: 'ListingController',
             templateUrl: viewBase + '/listing/listing.html',
+        }).when('/profile', {
+            controller: 'ProfileController',
+            templateUrl: viewBase + '/listing/profile.html',
         }).otherwise({ redirectTo: '/index' });
     };
     angular.module('TheApp').config(['$routeProvider', '$locationProvider', routeProvider]);

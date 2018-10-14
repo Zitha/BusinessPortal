@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="assets/img/favicon.ico">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>Awesome Landing Page by Creative Tim</title>
+    <title>Corner Job</title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 </head>
-<body class="landing-page landing-page1">
+<body class="landing-page landing-page1" ng-controller="IndexController">
     <nav class="navbar navbar-transparent navbar-top" role="navigation">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,10 +25,10 @@
                     <span class="icon-bar bar2"></span>
                     <span class="icon-bar bar3"></span>
                 </button>
-                <a href="http://www.creative-tim.com">
+                <a href="" ng-click="navigateTo('/index')">
                     <div class="logo-container">
                         <div class="logo">
-                            <img src="assets/img/new_logo.png" alt="Creative Tim Logo">
+                            <img src="assets/img/logo-1.png" alt="Logo">
                         </div>
                         <div class="brand">
                             Corner Job
@@ -41,7 +41,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="#">
-                            <i class="fa fa-facebook-square"></i>
+                            <i class="fa fa-phone"></i>
                             086 024 7500
                         </a>
                     </li>
@@ -55,11 +55,11 @@
                         <a href="" ng-click="navigateTo('/listing')">
                             <i class="fa fa-twitter"></i>
                             Listing
-                            {{role}}
                         </a>
                     </li>
                     <li>
                         <a href="#">
+                            <i class="fa fa-lock"></i>
                             Login
                         </a>
                     </li>
@@ -71,6 +71,8 @@
     <div class="wrapper">
         <ng-view></ng-view>
     </div>
+
+
     <!--Libraries-->
     <script src="assets/js/angular-min.js"></script>
     <script src="assets/js/angular.js"></script>
@@ -82,10 +84,15 @@
     <script src="app/app.js"></script>
     <script src="app/config.route.js"></script>
 
+    <!--Service-->
+    <script src="app/app.Service.js"></script>
+
     <!--Controller-->
     <script src="IndexController.js"></script>
     <script src="app/home/homeController.js"></script>
     <script src="app/listing/listingController.js"></script>
+    <script src="app/listing/profileController.js"></script>
+
 </body>
 
 </html>

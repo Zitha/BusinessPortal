@@ -1,48 +1,41 @@
 ﻿(function () {
     'use strict';
 
-    function ListingController($location, $scope, $rootScope, $sessionStorage) {
+    function ListingController($location, $scope, $rootScope, $sessionStorage, AppService) {
         $scope.technicians = [];
-        init();
 
         function init() {
-            $scope.technicians.push({
-                name: "Tebogo",
-                surname: "Masango",
-                rating: 3,
-                nationality:"South Africa",
-                type: "Plumber",
-                imageSrc:"http://icons.iconarchive.com/icons/hopstarter/face-avatars/128/Male-Face-A3-icon.png"
-            });
-            $scope.technicians.push({
-                name: "Thabang",
-                surname: "Ncobo",
-                rating: 4,
-                nationality: "South Africa",
-                type: "Painter",
-                imageSrc: "http://icons.iconarchive.com/icons/hopstarter/face-avatars/128/Male-Face-H2-icon.png"
-            });
-            $scope.technicians.push({
-                name: "Mandla",
-                surname: "Khumalo",
-                rating: 5,
-                nationality: "South Africa",
-                type: "Electrician",
-                imageSrc: "https://png.icons8.com/color/50/000000/user.png"
-            });
-            $scope.technicians.push({
-                name: "Martin",
-                surname: "Zondo",
-                rating: 2,
-                nationality: "South Africa",
-                type: "Plumber",
-                imageSrc: "https://png.icons8.com/doodle/50/000000/user.png"
-            });
+            for (var i = 0; i < technicians.length; i++) {
+                $scope.technicians.push(technicians[i]);
+            }
         }
+        $scope.navigateTo = function (url,model) {
+
+            AppService.setSelectedTechnician(model);
+
+            $location.path(url);
+        };
+
+        $scope.categoryChange = function (option) {
+            $scope.technicians = [];
+            if (option.singleSelect !== "") {
+                for (var i = 0; i < technicians.length; i++) {
+                    if (option.singleSelect === technicians[i].type) {
+                        $scope.technicians.push(technicians[i]);
+                    }
+                }
+            } else {
+                for (var j = 0; j < technicians.length; j++) {
+                    $scope.technicians.push(technicians[j]);
+                }
+            }
+        };
 
 
+        var technicians = AppService.getTechnicians();
+        init();
     }
 
     angular.module('TheApp').controller('ListingController', ListingController);
-    ListingController.$inject = ['$location', '$scope', '$rootScope', '$sessionStorage'];
+    ListingController.$inject = ['$location', '$scope', '$rootScope', '$sessionStorage','AppService'];
 })();
